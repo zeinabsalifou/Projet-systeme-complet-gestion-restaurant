@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Importations des contrôles et des styles -->
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<!-- Définition du conteneur principal -->
+<VBox alignment="center" spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="tp1.interfacedevoire.AchatsController">
+
+    <!-- Label pour le titre -->
+    <Label style="-fx-padding: 0 0 30 0;" text="Coordonnées de la carte de crédit">
+        <!-- Style pour la taille du texte -->
+        <font>
+            <Font size="24" />
+        </font>
+    </Label>
+    <!-- Espacement entre le titre et les champs -->
+    <padding>
+        <Insets top="-100" left="0" bottom="50" right="0" />
+    </padding>
+    <!-- Conteneur pour les champs de saisie -->
+    <VBox alignment="center" spacing="10">
+        <!-- Champs pour le numéro de carte -->
+        <Label text="Numéro de la Carte :" />
+        <TextField fx:id="numerocarte" style="-fx-max-width: 600px;" />
+        <!-- Champs pour la date d'expiration -->
+        <Label text="Date d'expiration :" />
+        <TextField fx:id="dateexpiration" style="-fx-max-width: 600px;" />
+        <!-- Champs pour le code de sécurité -->
+        <Label text="Code de sécurité :" />
+        <TextField fx:id="codesecurite" style="-fx-max-width: 600px;" />
+        <!-- Boutons pour valider et réinitialiser -->
+        <HBox alignment="center" spacing="10">
+            <Button fx:id="validerbutton" text="Valider" onAction="#validerButtonClicked" style="-fx-background-color: #4CAF50;" />
+            <Button text="Réinitialiser" onAction="#reinitialiseButtonClicked" style="-fx-background-color: #F44336;" />
+        </HBox>
+        <!-- Label pour afficher les messages -->
+        <Label fx:id="messagelabel" />
+    </VBox>
+</VBox>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Importations des classes JavaFX -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<!-- Définition de la structure principale de la vue -->
+<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="tp1.interfacedevoire.LivraisonsController">
+    <!-- Titre de la page -->
+    <Label style="-fx-padding: -60 0 5 15;" text="Entrées et sorties">
+        <!-- Style de police pour le titre -->
+        <font>
+            <Font size="26" />
+        </font>
+    </Label>
+
+    <!-- Espace entre les éléments -->
+    <Region prefHeight="10" />
+    <Region prefHeight="10" />
+
+    <!-- Conteneur principal -->
+    <BorderPane>
+        <center>
+            <VBox alignment="CENTER">
+                <!-- Espacement intérieur -->
+                <padding>
+                    <Insets top="5" left="270" bottom="240" right="0" />
+                </padding>
+                <!-- Conteneur d'ancrage pour la table et le bouton -->
+                <AnchorPane minHeight="350" minWidth="600" prefHeight="350" prefWidth="600">
+                    <children>
+                        <!-- Conteneur pour la table -->
+                        <VBox>
+                            <!-- Tableau des livraisons -->
+                            <TableView fx:id="livraisonsTable" prefHeight="500" prefWidth="1000">
+                                <columns>
+                                    <!-- Colonnes du tableau -->
+                                    <TableColumn fx:id="fournisseurs" text="Fournisseur" prefWidth="200.0">
+                                        <!-- Association avec la propriété fournisseur de l'objet -->
+                                        <cellValueFactory><PropertyValueFactory property="fournisseur" /></cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="typeProduit" text="Produit" prefWidth="200.0">
+                                        <!-- Association avec la propriété produitLivre de l'objet -->
+                                        <cellValueFactory><PropertyValueFactory property="produitLivre" /></cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="dateLivraisonCol" text="Date de Livraison" prefWidth="200.0">
+                                        <!-- Association avec la propriété dateLivraison de l'objet -->
+                                        <cellValueFactory><PropertyValueFactory property="dateLivraison" /></cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="lieuLivraisonCol" text="Lieu de Livraison" prefWidth="200.0">
+                                        <!-- Association avec la propriété lieuLivraison de l'objet -->
+                                        <cellValueFactory><PropertyValueFactory property="lieuLivraison" /></cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="statutColonne" text="Statut" prefWidth="200.0">
+                                        <!-- Association avec la propriété statut de l'objet -->
+                                        <cellValueFactory><PropertyValueFactory property="statut" /></cellValueFactory>
+                                    </TableColumn>
+                                </columns>
+                            </TableView>
+                            <!-- Espace entre la table et le bouton -->
+                            <Region prefHeight="15" />
+                            <!-- Bouton pour revenir en arrière -->
+                            <Button fx:id="btnPreced" text="Précédent" onAction="#retourInterfaceL" />
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </VBox>
+        </center>
+    </BorderPane>
+</VBox>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Importations des classes JavaFX -->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<!-- Définition de la structure principale de la vue -->
+<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="tp1.interfacedevoire.FournisseursController">
+    <!-- Titre de la vue -->
+    <Label style="-fx-padding: -70 0 5 20;" text="Liste des Fournisseurs du Restaurant" >
+        <!-- Style de police pour le titre -->
+        <font>
+            <Font size="22" />
+        </font>
+    </Label>
+
+    <!-- Espacements entre les éléments -->
+    <Region prefHeight="10" />
+    <Region prefHeight="10" />
+
+    <!-- Bouton pour revenir à l'interface précédente -->
+    <HBox alignment="CENTER_LEFT">
+        <Button fx:id="btnPrecede" text="Précédent" onAction="#retourInterfaceF" style="-fx-translate-x: 110; -fx-translate-y: -35;" />
+    </HBox>
+
+    <!-- Conteneur principal pour la mise en page -->
+    <BorderPane >
+        <!-- Centrage du contenu -->
+        <center>
+            <!-- Conteneur interne pour le contenu -->
+            <VBox alignment="CENTER">
+                <!-- Décalage du contenu -->
+                <padding>
+                    <Insets top="5" left="110" bottom="240" right="0" />
+                </padding>
+                <!-- Conteneur pour le tableau -->
+                <AnchorPane minHeight="350" minWidth="600" prefHeight="350" prefWidth="700">
+                    <children>
+                        <VBox>
+                            <!-- TableView pour afficher les fournisseurs -->
+                            <TableView fx:id="tableView5" editable="true" prefHeight="500" prefWidth="1300">
+                                <!-- Colonnes du TableView -->
+                                <columns>
+                                    <!-- Colonne ID -->
+                                    <TableColumn text="ID" fx:id="idColumn" editable="true" >
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="id" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <!-- Colonne Nom du Fournisseur -->
+                                    <TableColumn text="Nom du Fournisseur" fx:id="nomColumn" >
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="nom" />
+                                        </cellValueFactory>
+                                        <prefWidth>200</prefWidth>
+                                    </TableColumn>
+                                    <!-- Colonne Type de Produits -->
+                                    <TableColumn text="Type de Produits" fx:id="typeProduitsColumn" prefWidth="200">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="typeProduits" />
+                                        </cellValueFactory>
+                                        <prefWidth>350</prefWidth>
+                                    </TableColumn>
+                                    <!-- Colonne Contact -->
+                                    <TableColumn text="Contact" fx:id="contactColumn" prefWidth="200">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="contact" />
+                                        </cellValueFactory>
+                                        <prefWidth>300</prefWidth>
+                                    </TableColumn>
+                                    <!-- Colonne Adresse -->
+                                    <TableColumn text="Adresse" fx:id="adresseColumn" prefWidth="250">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="adresse" />
+                                        </cellValueFactory>
+                                        <prefWidth>300</prefWidth>
+                                    </TableColumn>
+                                    <!-- Colonne Numéro de Téléphone -->
+                                    <TableColumn text="Numéro de Téléphone" fx:id="numeroTelColumn" prefWidth="200">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="numeroTel" />
+                                        </cellValueFactory>
+                                        <prefWidth>300</prefWidth>
+                                    </TableColumn>
+                                    <!-- Colonne Email -->
+                                    <TableColumn text="Email" fx:id="emailColumn" prefWidth="250">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="email" />
+                                        </cellValueFactory>
+                                        <prefWidth>300</prefWidth>
+                                    </TableColumn>
+                                </columns>
+                            </TableView>
+                            <!-- Espacement -->
+                            <Region prefHeight="15" />
+                            <!-- Boutons pour ajouter et supprimer un fournisseur -->
+                            <HBox spacing="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+                                <!-- Bouton pour ajouter un fournisseur -->
+                                <Button fx:id="addButton" text="Ajouter Fournisseur" onAction="#ajouterFournisseur"  style="-fx-background-color: #4CAF50;" />
+                                <!-- Utilisation d'une Region pour occuper l'espace restant -->
+                                <Region HBox.hgrow="ALWAYS" />
+                                <!-- Bouton pour supprimer un fournisseur -->
+                                <Button fx:id="deleteButton" text="Supprimer Fournisseur" onAction="#supprimerFournisseur"  style="-fx-background-color: #F44336;"/>
+                            </HBox>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </VBox>
+        </center>
+    </BorderPane>
+</VBox>

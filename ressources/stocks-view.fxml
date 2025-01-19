@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Déclaration XML -->
+
+<?import javafx.geometry.*?>
+<!-- Importation de classes pour les géométries JavaFX -->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<!-- Importation de classes pour les éléments de contrôle, d'image, de mise en page et de texte JavaFX -->
+
+<VBox alignment="TOP_LEFT" spacing="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="tp1.interfacedevoire.StocksController">
+    <!-- Définition d'une boîte verticale (VBox) -->
+    <!-- L'alignement est en haut à gauche -->
+    <!-- L'espacement entre les enfants est de 10.0 pixels -->
+    <!-- Définition de l'espace de noms FX et du contrôleur de la classe Java -->
+
+    <padding>
+        <!-- Ajout de remplissage à la VBox -->
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <!-- Définition des marges (espacement) pour le contenu -->
+    </padding>
+
+    <HBox alignment="TOP_LEFT" spacing="10.0">
+        <!-- Définition d'une boîte horizontale (HBox) -->
+        <!-- L'alignement est en haut à gauche -->
+        <!-- L'espacement entre les enfants est de 10.0 pixels -->
+
+        <padding>
+            <!-- Ajout de remplissage à la HBox -->
+            <Insets bottom="0" left="0" right="0" top="10" />
+            <!-- Définition des marges (espacement) pour le contenu -->
+        </padding>
+
+        <ImageView fitHeight="42.0" fitWidth="39.0">
+            <!-- Ajout d'une image -->
+            <!-- La hauteur et la largeur de l'image sont ajustées à 42.0 et 39.0 pixels respectivement -->
+            <image>
+                <Image url="@../../../flame_icon_151350.png" />
+                <!-- Chargement de l'image depuis l'URL spécifiée -->
+            </image>
+        </ImageView>
+
+        <Text text="La Marmite" wrappingWidth="160.603515625">
+            <!-- Ajout de texte -->
+            <!-- Le texte est "La Marmite" -->
+            <!-- La largeur de l'enveloppe du texte est définie à 160.603515625 pixels -->
+            <font>
+                <!-- Définition de la police -->
+                <Font name="Vivaldi Italic" size="30.0" />
+                <!-- La police est Vivaldi Italic avec une taille de 30.0 -->
+            </font>
+        </Text>
+    </HBox>
+
+    <Button fx:id="btnMonRestaurant" layoutX="250.0" layoutY="180.0" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #CCCCCC; -fx-text-fill: #000000; -fx-border-color: #000000; -fx-border-width: 1px;" text="Mon Restaurant" />
+    <!-- Ajout d'un bouton -->
+    <!-- L'ID du bouton est "btnMonRestaurant" -->
+    <!-- Les dimensions préférées du bouton sont de 120.0 pixels de largeur et 30.0 pixels de hauteur -->
+    <!-- Le texte du bouton est "Mon Restaurant" -->
+    <!-- Le style du bouton est défini avec des couleurs de fond, de texte et de bordure spécifiques -->
+
+    <BorderPane>
+        <!-- Définition d'un conteneur de mise en page BorderPane -->
+
+        <left>
+            <!-- Définition de la partie gauche du BorderPane -->
+
+            <VBox alignment="TOP_LEFT" spacing="5.0">
+                <!-- Définition d'une boîte verticale (VBox) -->
+                <!-- L'alignement est en haut à gauche -->
+                <!-- L'espacement entre les enfants est de 5.0 pixels -->
+
+                <!-- Section "Inventaire" -->
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <!-- Définition d'une boîte horizontale (HBox) -->
+                    <!-- L'alignement est centré à gauche -->
+                    <!-- L'espacement entre les enfants est de 5.0 pixels -->
+
+                    <ImageView fitHeight="20.0" fitWidth="20.0">
+                        <!-- Ajout d'une image -->
+                        <!-- La hauteur et la largeur de l'image sont ajustées à 20.0 pixels -->
+                        <image>
+                            <Image url="@inventory/inventaire.png" />
+                            <!-- Chargement de l'image depuis l'URL spécifiée -->
+                        </image>
+                    </ImageView>
+                    <Label style="-fx-font-weight: bold;" text="Inventaire" />
+                    <!-- Ajout d'une étiquette en gras avec le texte "Inventaire" -->
+                </HBox>
+
+                <!-- Section "Gestion de Stocks" -->
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <!-- Définition d'une nouvelle boîte horizontale (HBox) pour la gestion de stocks -->
+                    <!-- L'alignement est centré à gauche -->
+                    <!-- L'espacement entre les enfants est de 5.0 pixels -->
+
+                    <ImageView fitHeight="20.0" fitWidth="20.0">
+                        <!-- Ajout d'une image -->
+                        <!-- La hauteur et la largeur de l'image sont ajustées à 20.0 pixels -->
+                        <image>
+                            <Image url="@stocks/stock.png" />
+                            <!-- Chargement de l'image depuis l'URL spécifiée -->
+                        </image>
+                    </ImageView>
+                    <Label style="-fx-font-weight: bold;" text="Gestion de Stocks" />
+                    <!-- Ajout d'une étiquette en gras avec le texte "Gestion de Stocks" -->
+                </HBox>
+
+                <!-- Section "Actions" -->
+                <VBox>
+                    <!-- Définition d'une nouvelle boîte verticale (VBox) pour les actions -->
+                    <!-- Contient plusieurs étiquettes pour les différentes actions avec des ID et des événements associés -->
+
+                    <!-- Label pour "Niveau de stocks" avec événement onMouseClicked -->
+                    <Label onMouseClicked="#onNiveauStocksClick" onMouseEntered="#onMouseEnter" onMouseExited="#onMouseExit" style="-fx-cursor: hand;" text="Niveau de stocks" />
+                    <!-- Label pour "Compte de stocks" avec événement onMouseClicked -->
+                    <Label fx:id="btncompte" onMouseClicked="#onCompteStocksClick" onMouseEntered="#onMouseEnter" onMouseExited="#onMouseExit" style="-fx-cursor: hand;" text="Compte de stocks" />
+                    <!-- Label pour "Gestion des produits" avec événement onMouseClicked -->
+                    <Label fx:id="btnproduit" onMouseClicked="#onGestionProduitsClick" onMouseEntered="#onMouseEnter" onMouseExited="#onMouseExit" style="-fx-cursor: hand;" text="Gestion des produits" />
+                    <!-- Label pour "Entrées et sorties" avec événement onMouseClicked -->
+                    <Label fx:id="btnentree" onMouseClicked="#onEntreesSortiesClick" onMouseEntered="#onMouseEnter" onMouseExited="#onMouseExit" style="-fx-cursor: hand;" text="Entrées et sorties" />
+                </VBox>
+
+                <!-- Section "Approvisionnement" -->
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <!-- Définition d'une nouvelle boîte horizontale (HBox) pour l'approvisionnement -->
+                    <!-- L'alignement est centré à gauche -->
+                    <!-- L'espacement entre les enfants est de 5.0 pixels -->
+
+                    <ImageView fitHeight="20.0" fitWidth="20.0">
+                        <!-- Ajout d'une image -->
+                        <!-- La hauteur et la largeur de l'image sont ajustées à 20.0 pixels -->
+                        <image>
+                            <Image url="@livraisons/livraison.png" />
+                            <!-- Chargement de l'image depuis l'URL spécifiée -->
+                        </image>
+                    </ImageView>
+                    <Label style="-fx-font-weight: bold;" text="Approvisionnement" />
+                    <!-- Ajout d'une étiquette en gras avec le texte "Approvisionnement" -->
+                </HBox>
+
+                <!-- Section "Actions d'Approvisionnement" -->
+                <VBox>
+                    <!-- Définition d'une nouvelle boîte verticale (VBox) pour les actions d'approvisionnement -->
+                    <!-- Contient plusieurs étiquettes pour les différentes actions avec des ID et des événements associés -->
+
+                    <!-- Label pour "Achats de marchandises" avec événement onMouseClicked -->
+                    <Label fx:id="btnachats" onMouseClicked="#onAchatsClick" onMouseEntered="#onMouseEnter" onMouseExited="#onMouseExit" text="Achats de marchandises" />
+                    <!-- Label pour "Transactions d'achat" avec événement onMouseClicked -->
+                    <Label fx:id="btntransactions" onMouseClicked="#onTransactionsClick" onMouseEntered="#onMouseEnter" onMouseExited="#onMouseExit" text="Transactions d'achat" />
+                    <!-- Label pour "Suivi livraisons" avec événement onMouseClicked -->
+                    <Label fx:id="btnlivraisons" onMouseClicked="#onLivraisonsClick" onMouseEntered="#onMouseEnter" onMouseExited="#onMouseExit" text="Suivi livraisons" />
+                    <!-- Label pour "Liste de fournisseurs" avec événement onMouseClicked -->
+                    <Label fx:id="btnfournisseurs" onMouseClicked="#onFournisseursClick" onMouseEntered="#onMouseEnter" onMouseExited="#onMouseExit" text="Liste de fournisseurs" />
+                </VBox>
+            </VBox>
+        </left>
+
+        <right>
+            <!-- Définition de la partie droite du BorderPane -->
+
+            <VBox alignment="TOP_LEFT" spacing="5.0" VBox.vgrow="ALWAYS">
+                <!-- Définition d'une boîte verticale (VBox) -->
+                <!-- L'alignement est en haut à gauche -->
+                <!-- L'espacement entre les enfants est de 5.0 pixels -->
+                <!-- VBox.vgrow est défini à "ALWAYS" pour permettre à la VBox de s'étendre verticalement -->
+
+                <!-- Padding pour ajuster l'espace autour des éléments -->
+                <padding>
+                    <Insets bottom="0" left="60" right="600" top="-100" />
+                    <!-- Définition des marges (espacement) pour le contenu -->
+                </padding>
+
+                <!-- Label "Niveau de stocks" en rouge -->
+                <HBox layoutX="50.0" layoutY="50.0" spacing="10.0">
+                    <!-- Définition d'une boîte horizontale (HBox) pour le titre "Niveau de stocks" -->
+                    <!-- L'espacement entre les enfants est de 10.0 pixels -->
+
+                    <!-- Label pour "Niveau de stocks" en rouge et en gras -->
+                    <Label prefHeight="32.0" prefWidth="181.0" style="-fx-text-fill: red; -fx-font-size: 22px;" text="Niveau de stocks" />
+                    <!-- Ajout d'un bouton pour créer un nouveau niveau de stocks -->
+                    <Button fx:id="btnMonRestauran" prefHeight="30.0" style="-fx-background-color: #AAAAAA; -fx-text-fill: #000000;" text="Nouveau niveau de stocks" wrapText="true" />
+                    <!-- Le texte du bouton est "Nouveau niveau de stocks" -->
+                </HBox>
+
+                <!-- Séparateur horizontal -->
+                <Separator orientation="HORIZONTAL" prefWidth="1000" style="-fx-background-color: #000000; -fx-opacity: 0.30;" />
+                <!-- Ajout d'un séparateur horizontal avec une couleur de fond et une opacité spécifiques -->
+
+                <!-- Espacement -->
+                <Region prefHeight="10" />
+                <!-- Ajout d'un espace vertical -->
+
+                <!-- HBox pour les éléments sur la même ligne -->
+                <HBox spacing="10">
+                    <!-- Définition d'une boîte horizontale (HBox) pour placer les éléments sur la même ligne -->
+                    <!-- L'espacement entre les enfants est de 10 pixels -->
+
+                    <!-- Label "Historique d'inventaire" avec icône de loupe -->
+                    <HBox spacing="5">
+                        <!-- Définition d'une nouvelle boîte horizontale (HBox) pour le label et l'icône de loupe -->
+                        <!-- L'espacement entre les enfants est de 5 pixels -->
+
+                        <!-- Ajout d'une image de loupe -->
+                        <ImageView>
+                            <image>
+                                <Image url="@loupe.png" />
+                                <!-- Chargement de l'image depuis l'URL spécifiée -->
+                            </image>
+                        </ImageView>
+
+                        <!-- Ajout d'un champ de texte pour l'historique d'inventaire -->
+                        <TextField fx:id="textField" onKeyPressed="#handleKeyPressed" promptText="Historique d'inventaire" />
+                        <!-- Le texte du champ de texte est "Historique d'inventaire" -->
+                    </HBox>
+
+                    <!-- Ajout d'un espace entre "Historique d'inventaire" et "Date" -->
+                    <Region prefWidth="100" />
+                    <!-- Ajout d'une région pour l'espacement -->
+
+                    <!-- Label "Date" -->
+                    <Label style="-fx-text-fill: grey;" text="Date:" />
+                    <!-- Le texte du label est "Date:" avec une couleur de texte gris -->
+
+                    <!-- DatePicker pour sélectionner la date -->
+                    <DatePicker />
+                    <!-- Ajout d'un sélecteur de date -->
+                </HBox>
+
+                <!-- Espacement -->
+                <Region prefHeight="10" />
+                <!-- Ajout d'un espace vertical -->
+
+                <!-- BorderPane pour le TableView -->
+                <BorderPane>
+                    <!-- Définition d'un conteneur BorderPane pour le TableView -->
+
+                    <center>
+                        <!-- Définition du centre du BorderPane -->
+
+                        <!-- VBox pour aligner les éléments au centre -->
+                        <VBox alignment="CENTER">
+                            <!-- Définition d'une boîte verticale (VBox) pour aligner les éléments au centre -->
+
+                            <!-- Padding pour ajuster l'espace autour des éléments -->
+                            <padding>
+                                <Insets bottom="10" top="20" />
+                                <!-- Définition des marges (espacement) pour le contenu -->
+                            </padding>
+
+                            <!-- AnchorPane pour contenir le TableView -->
+                            <AnchorPane minHeight="400" minWidth="600" prefHeight="400" prefWidth="600">
+                                <!-- Définition d'un AnchorPane avec une hauteur et une largeur préférées -->
+
+                                <children>
+                                    <!-- Définition des enfants de l'AnchorPane -->
+
+                                    <!-- VBox pour contenir le TableView -->
+                                    <VBox>
+
+                                        <!-- TableView pour afficher les données -->
+                                        <TableView fx:id="tableView" prefHeight="500" prefWidth="1275" VBox.vgrow="ALWAYS">
+                                            <!-- Définition d'un TableView avec une hauteur et une largeur préférées -->
+                                            <!-- VBox.vgrow est défini à "ALWAYS" pour permettre au TableView de s'étendre verticalement -->
+
+                                            <!-- Colonnes du TableView -->
+                                            <columns>
+                                                <!-- Définition des colonnes du TableView -->
+
+                                                <!-- Colonne pour le produit -->
+                                                <TableColumn fx:id="produitCol" prefWidth="255" text="Produit" />
+                                                <!-- Colonne pour l'unité de stock -->
+                                                <TableColumn fx:id="uniteStockCol" prefWidth="255" text="Unité de stock" />
+                                                <!-- Colonne pour le stock initial -->
+                                                <TableColumn fx:id="stockInitCol" prefWidth="255" text="Stock Initial" />
+                                                <!-- Colonne pour le stock final -->
+                                                <TableColumn fx:id="stockFinaleCol" prefWidth="255" text="Stock Finale" />
+                                                <!-- Colonne pour le statut -->
+                                                <TableColumn fx:id="statutCol" prefWidth="255" text="Statut" />
+                                            </columns>
+                                        </TableView>
+                                        <Region prefHeight="15" />
+                                        <!-- Ajout d'une région pour l'espacement -->
+
+                                        <Button fx:id="boutonPrecedent" onAction="#retourInterfa" text="Précédent" />
+                                        <!-- Définition d'un bouton avec un ID et un événement associé -->
+
+                                        <HBox alignment="CENTER" spacing="15" style="-fx-padding: 15px 0px 0px 0px;">
+                                            <!-- Définition d'une boîte horizontale (HBox) -->
+                                            <!-- L'alignement est centré -->
+                                            <!-- L'espacement entre les enfants est de 15 pixels -->
+                                            <!-- Ajout de style pour définir la marge supérieure de la HBox -->
+
+                                            <!-- Bouton "Ajouter Produit" -->
+                                            <Button fx:id="ajouterProduitBtn" style="-fx-background-color: #4CAF50;" text="Ajouter Produit" />
+                                            <!-- Bouton avec un ID et un style pour la couleur de fond -->
+
+                                            <!-- Bouton "Supprimer Produit" -->
+                                            <Button fx:id="supprimerBtn" style="-fx-background-color: #F44336;" text="Supprimer Produit" />
+                                            <!-- Bouton avec un ID et un style pour la couleur de fond -->
+                                        </HBox>
+                                    </VBox>
+                                </children>
+                            </AnchorPane>
+                        </VBox>
+                    </center>
+                </BorderPane>
+            </VBox>
+        </right>
+    </BorderPane>
+</VBox>

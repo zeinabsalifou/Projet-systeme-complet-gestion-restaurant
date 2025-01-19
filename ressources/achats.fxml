@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Déclaration XML -->
+
+<?import javafx.collections.FXCollections?>
+<!-- Importation de la classe FXCollections -->
+
+<?import javafx.geometry.Insets?>
+<!-- Importation de la classe Insets pour les marges -->
+
+<?import javafx.scene.control.*?>
+<!-- Importation des contrôles JavaFX -->
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<!-- Importation des classes pour les images -->
+
+<?import javafx.scene.layout.*?>
+<!-- Importation des classes pour la mise en page -->
+
+<?import javafx.scene.text.Font?>
+<!-- Importation de la classe Font pour les polices -->
+
+<?import java.lang.*?>
+<!-- Importation de la classe java.lang.* -->
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml" fx:controller="tp1.interfacedevoire.AchatsController">
+    <!-- Définition d'un conteneur AnchorPane avec une hauteur et une largeur préférées -->
+    <!-- Espace de noms défini pour JavaFX et FXML -->
+    <!-- Contrôleur associé à ce fichier FXML -->
+
+    <children>
+        <!-- Contenu de l'AnchorPane -->
+
+        <VBox alignment="center" spacing="20" AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+            <!-- Définition d'une boîte verticale (VBox) avec un alignement au centre et un espacement entre les enfants -->
+            <!-- Positionné avec des contraintes sur les bords supérieur, gauche et droit de l'AnchorPane -->
+
+            <!-- Label "Achats de marchandises" -->
+            <Label  style="-fx-padding: -40 0 5 0;" text="Achats de marchandises">
+                <!-- Style pour ajuster le padding (rembourrage) du texte -->
+                <!-- Texte "Achats de marchandises" avec une taille de police de 24 -->
+            </Label>
+
+            <!-- Padding pour ajuster l'espace autour des éléments -->
+            <padding>
+                <Insets top="50" left="0" bottom="0" right="0" />
+                <!-- Définition des marges (espacement) pour le contenu -->
+            </padding>
+
+            <children>
+                <!-- Contenu de la VBox -->
+
+                <!-- Label "Nom du Produit" -->
+                <Label text="Nom du Produit :" />
+                <!-- Champ de texte pour saisir le nom du produit -->
+                <TextField fx:id="nomproduit" style="-fx-max-width: 600px;" />
+                <!-- Style pour définir la largeur maximale du champ de texte -->
+
+                <!-- Label "Quantité" -->
+                <Label text="Quantité :" />
+                <!-- Champ de texte pour saisir la quantité -->
+                <TextField fx:id="quantites" style="-fx-max-width: 600px;" />
+                <!-- Style pour définir la largeur maximale du champ de texte -->
+
+                <!-- Label "Prix Unitaire" -->
+                <Label text="Prix Unitaire :" />
+                <!-- Champ de texte pour saisir le prix unitaire -->
+                <TextField fx:id="prixunitaire" style="-fx-max-width: 600px;" />
+                <!-- Style pour définir la largeur maximale du champ de texte -->
+
+                <!-- ComboBox pour sélectionner le nom du fournisseur -->
+                <Label text="Nom du Fournisseur :" />
+                <ComboBox fx:id="nomFournisseurComboBox">
+                    <!-- Éléments de la liste déroulante -->
+                    <items>
+                        <!-- Collection d'éléments -->
+                        <FXCollections fx:factory="observableArrayList">
+                            <!-- Éléments de la collection -->
+                            <String fx:value="Métro" />
+                            <String fx:value="Boucherie Legrand" />
+                            <String fx:value="Fruits et Légumes Frais" />
+                            <String fx:value="Boulangerie Dupont" />
+                            <String fx:value="Épicerie Fine Gourmet" />
+                            <!-- Ajoutez d'autres fournisseurs selon vos besoins -->
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <!-- Fin de la liste déroulante pour le nom du fournisseur -->
+
+                <!-- Label pour afficher le total -->
+                <Label fx:id="totallabel" />
+                <!-- Label pour afficher les messages -->
+                <Label fx:id="messageslabel" />
+
+                <!-- HBox pour le bouton de paiement -->
+                <HBox spacing="10" alignment="center" style="-fx-padding: 0 30 0 0;"> <!-- Padding à gauche de 30 pixels -->
+                    <!-- Image de carte de crédit -->
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@com/example/demo15/Pictures/visamaster.png" />
+                            <!-- Chargement de l'image depuis l'URL spécifiée -->
+                        </image>
+                    </ImageView>
+                    <!-- Bouton "Payer" -->
+                    <Button fx:id="validation" text="Payer" onAction="#payerButtonClicked" style="-fx-background-color: #4CAF50;" >
+                        <!-- Style pour définir la couleur de fond du bouton -->
+                    </Button>
+                </HBox>
+
+                <!-- Région pour s'étendre horizontalement -->
+                <Region HBox.hgrow="ALWAYS" />
+                <!-- Ajout d'une région pour étendre le bouton "Réinitialiser" -->
+
+                <!-- Bouton "Réinitialiser" -->
+                <Button text="Réinitialiser" onAction="#reinitialiserButtonClicked" style="-fx-background-color: #F44336;" />
+                <!-- Style pour définir la couleur de fond du bouton -->
+            </children>
+
+            <!-- Bouton "Précédent" -->
+            <Button fx:id="boutonpre" text="Précédent" onAction="#retourInterfaceA" />
+            <!-- Définition d'un bouton avec un ID et un événement associé -->
+        </VBox>
+    </children>
+</AnchorPane>
+        <!-- Fin du conteneur AnchorPane -->

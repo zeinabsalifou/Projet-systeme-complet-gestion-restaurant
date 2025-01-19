@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Importations des classes JavaFX -->
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- Définition de la structure principale de la vue -->
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="294.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.interfacedevoire.Interface_Gestion_Controller">
+   <!-- Centrage du contenu -->
+   <center>
+      <!-- Conteneur principal pour la mise en page -->
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <!-- En-tête avec le titre du menu -->
+            <HBox prefHeight="114.0" prefWidth="600.0">
+               <children>
+                  <Label prefHeight="20.0" prefWidth="176.0" text="MENU DU GESTIONNAIRE">
+                     <!-- Marge pour positionner le label -->
+                     <HBox.margin>
+                        <Insets left="210.0" top="50.0" />
+                     </HBox.margin>
+                     <!-- Style de police pour le label -->
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <!-- Marge pour l'espacement -->
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <!-- Boutons pour les différentes options du menu -->
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <!-- Bouton pour accéder à la gestion du stock -->
+                  <Button mnemonicParsing="false" onAction="#bouttton_stock" prefHeight="55.0" prefWidth="106.0" style="-fx-background-radius: 50;" text="STOCK">
+                     <!-- Marge pour positionner le bouton -->
+                     <HBox.margin>
+                        <Insets left="100.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <!-- Conteneur pour le deuxième bouton -->
+                  <VBox prefHeight="100.0" prefWidth="185.0">
+                     <children>
+                        <!-- Sous-bouton pour les statistiques -->
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#Boutton_Statistique" prefHeight="55.0" prefWidth="106.0" style="-fx-background-radius: 50;" text="STATISTIQUE">
+                                 <!-- Marge pour positionner le bouton -->
+                                 <HBox.margin>
+                                    <Insets left="75.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <!-- Remplissage pour l'espacement -->
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <!-- Marge pour l'espacement -->
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </HBox>
+            <!-- Bouton de déconnexion -->
+            <Button mnemonicParsing="false" onAction="#Bouttondeconnexion" style="-fx-background-color: #F44336; -fx-border-radius: 50;" text="Se déconnecter " textFill="#fffdfd">
+               <!-- Marge pour positionner le bouton -->
+               <VBox.margin>
+                  <Insets top="55.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

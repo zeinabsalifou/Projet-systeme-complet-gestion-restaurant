@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Importations des classes JavaFX -->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- Définition de la structure principale de la vue -->
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="771.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.interfacedevoire.Interface_authentification_Controller">
+   <!-- Centrage du contenu -->
+   <center>
+      <!-- Conteneur principal pour la mise en page -->
+      <VBox prefHeight="460.0" prefWidth="765.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
+         <children>
+            <!-- En-tête avec le logo et le nom de l'application -->
+            <HBox prefHeight="125.0" prefWidth="310.0">
+               <children>
+                  <!-- Logo de l'application -->
+                  <ImageView fitHeight="51.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@flame_icon_151350.png" />
+                     </image>
+                  </ImageView>
+                  <!-- Nom de l'application -->
+                  <Text fx:id="RestauNom" strokeType="OUTSIDE" strokeWidth="0.0" text="La Marmite" wrappingWidth="190.9830722808838">
+                     <font>
+                        <Font name="Vivaldi Italic" size="38.0" />
+                     </font>
+                  </Text>
+                  <!-- Étiquette d'erreur ou de message -->
+                  <Label fx:id="errorLabel" alignment="CENTER" text="Indentifiez-vous">
+                     <font>
+                        <Font name="Bodoni MT" size="20.0" />
+                     </font>
+                     <!-- Décalage de l'étiquette d'erreur -->
+                     <HBox.margin>
+                        <Insets left="90.0" top="90.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <!-- Zone de saisie pour le nom d'utilisateur -->
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="575.0">
+               <children>
+                  <TextField fx:id="usernameTextField" prefHeight="55.0" prefWidth="226.0" promptText="Nom d'utilisateur" style="-fx-background-color: #ffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #cccc;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <!-- Marge pour l'espacement -->
+               <VBox.margin>
+                  <Insets bottom="20.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <!-- Zone de saisie pour le mot de passe -->
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="205.0" prefHeight="42.0" prefWidth="332.0">
+               <children>
+                  <PasswordField fx:id="passwordTextField" prefHeight="55.0" prefWidth="226.0" promptText="Mot de passe" style="-fx-background-color: #ffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #ccc;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </PasswordField>
+               </children>
+            </HBox>
+            <!-- Bouton de connexion -->
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="267.0" prefHeight="42.0" prefWidth="332.0">
+               <!-- Marge pour l'espacement -->
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <children>
+                  <!-- Bouton de connexion -->
+                  <Button fx:id="connexionButton" mnemonicParsing="false" onAction="#onHelloButtonClick" onKeyPressed="#entree" prefHeight="32.0" prefWidth="226.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-background-color: #ed6637; -fx-cursor: hand;" text="Connexion" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

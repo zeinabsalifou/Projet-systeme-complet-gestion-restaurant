@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Importations de différentes classes JavaFX -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<!-- Définition de la structure principale de la vue -->
+<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="tp1.interfacedevoire.EntreeController">
+    <!-- Titre de la vue -->
+    <Label  style="-fx-padding: -50 0 5 15;" text="Entrées et sorties">
+        <!-- Style de police pour le titre -->
+        <font>
+            <Font size="26" />
+        </font>
+    </Label>
+
+    <!-- Espacements entre les éléments -->
+    <Region prefHeight="10" />
+    <Region prefHeight="10" />
+
+    <!-- Conteneur principal pour la mise en page -->
+    <BorderPane >
+        <!-- Centrage du contenu -->
+        <center>
+            <!-- Conteneur interne pour le contenu -->
+            <VBox alignment="CENTER">
+                <!-- Décalage du contenu -->
+                <padding>
+                    <Insets top="5" left="270" bottom="240" right="0" />
+                </padding>
+                <!-- Conteneur pour le tableau -->
+                <AnchorPane minHeight="350" minWidth="600" prefHeight="350" prefWidth="600">
+                    <children>
+                        <VBox>
+                            <!-- Tableau pour afficher les entrées et sorties de produits -->
+                            <TableView fx:id="tableView3" prefHeight="500" prefWidth="1000">
+                                <!-- Colonnes du tableau -->
+                                <columns>
+                                    <TableColumn fx:id="productNameCol" text="Nom Produit" prefWidth="200"/>
+                                    <TableColumn fx:id="initialStockCol" text="Stock Initial" prefWidth="200"/>
+                                    <TableColumn fx:id="entriesCol" text="Entrées" prefWidth="200"/>
+                                    <TableColumn fx:id="exitsCol" text="Sorties" prefWidth="200"/>
+                                    <TableColumn fx:id="finalStockCol" text="Stock Final" prefWidth="200"/>
+                                </columns>
+                            </TableView>
+                            <!-- Espacement -->
+                            <Region prefHeight="10" />
+                            <!-- Boutons -->
+                            <Button fx:id="btnPre" text="Précédent" onAction="#retourInterfacep" />
+                            <!-- HBox pour les boutons d'ajout et de suppression -->
+                            <HBox alignment="CENTER" spacing="15" style="-fx-padding: 15px 0px 0px 0px;" >
+                                <!-- Bouton Ajouter Produit -->
+                                <Button fx:id="ajouterItem" text="Ajouter" style="-fx-background-color: #4CAF50;"/>
+                                <!-- Bouton Supprimer -->
+                                <Button fx:id="supprimerItem" text="Supprimer" style="-fx-background-color: #F44336;" />
+                            </HBox>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </VBox>
+        </center>
+    </BorderPane>
+</VBox>

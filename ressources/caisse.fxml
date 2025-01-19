@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Commentaires globaux du fichier FXML -->
+<!--
+* Auteur: Amélie Cantin
+* Date: 22 mars 2024
+*
+* Pour l'équipe no 1:
+*     Amélie Cantin
+*     Rayane Dakech
+*     Soukaina Qaraqouna
+*     Assia Rabahi
+*     Zeinab Salifou
+*
+* Travail Pratique dans le cadre du cours Introduction aux interfaces utilisateur INF1034
+-->
+<!-- Importations de classes JavaFX -->
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Définition de l'AnchorPane pour la fenêtre -->
+<AnchorPane id="AnchorPaneFenetre" stylesheets="@caisse.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.interfacedevoire.CaisseController">
+    <!-- Contenu principal de la fenêtre organisé en HBox -->
+    <HBox id="HBoxParent">
+
+        <!-- Section gauche de la fenêtre -->
+        <VBox id="VBoxGauche">
+            <!-- Bouton pour ajouter ou modifier une commande -->
+            <Button id="ajouterModifierCommandeBouton" fx:id="ajouterModifierCommandeBouton">
+                <!-- Marge pour le bouton -->
+                <VBox.margin>
+                    <Insets bottom="15.0" />
+                </VBox.margin>
+            </Button>
+            <!-- Liste des commandes -->
+            <ListView id="list-view" fx:id="listeViewDesCommandes">
+                <VBox.margin>
+                    <Insets bottom="15.0" />
+                </VBox.margin>
+            </ListView>
+            <!-- Bouton de déconnexion -->
+            <Button id="boutonDeconnecter" fx:id="deconnecterBouton" onAction="#sedeconnecter" text="Déconnexion">
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+            </Button>
+            <!-- Image -->
+            <ImageView id="imageView" fitHeight="100.0" fitWidth="254.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets top="20.0" />
+                </VBox.margin>
+            </ImageView>
+        </VBox>
+
+        <!-- Section centrale de la fenêtre -->
+        <VBox id="VBoxCentre" styleClass="bordureVerte">
+            <!-- Label pour la transaction en cours -->
+            <Label id="labelTransactionEnCours" styleClass="labelDuCentre" text="Transaction en cours" />
+            <!-- Label pour la commande en paiement -->
+            <Label id="labelCommandeEnPaiement" fx:id="commandeEnPaiementLabel" styleClass="labelDuCentre" text="Aucune" />
+            <!-- Tableau pour afficher la commande -->
+            <TableView fx:id="commandeTableView">
+                <columns>
+                    <TableColumn id="tableItemColonne" fx:id="itemColonne" resizable="false" text="Items" />
+                    <TableColumn id="tablePrixColonne" fx:id="prixColonne" resizable="false" text="Prix" />
+                </columns>
+            </TableView>
+            <!-- Calculs de total -->
+            <!-- Sous-total -->
+            <HBox styleClass="HBoxCalculTotal">
+                <Label styleClass="labelCalculTotalGauche" text="Sous-Total:" />
+                <Label fx:id="sousTotalLabel" styleClass="labelCalculTotalDroite" />
+            </HBox>
+            <!-- TPS -->
+            <HBox styleClass="HBoxCalculTotal">
+                <Label styleClass="labelCalculTotalGauche" text="TPS:" />
+                <Label fx:id="tpsLabel" styleClass="labelCalculTotalDroite" />
+            </HBox>
+            <!-- TVQ -->
+            <HBox styleClass="HBoxCalculTotal">
+                <Label styleClass="labelCalculTotalGauche" text="TVQ:" />
+                <Label fx:id="tvqLabel" styleClass="labelCalculTotalDroite" />
+            </HBox>
+            <!-- Rabais -->
+            <HBox styleClass="HBoxCalculTotal">
+                <Label styleClass="labelCalculTotalGauche" text="Rabais:" />
+                <Label fx:id="rabaisLabel" styleClass="labelCalculTotalDroite" />
+            </HBox>
+            <!-- Total -->
+            <HBox>
+                <Label id="labelTotalGauche" text="TOTAL:" />
+                <Label id="labelTotalDroite" fx:id="totalLabel" style="-fx-pref-height: 62px; -fx-pref-width: 200px;" />
+            </HBox>
+            <HBox.margin>
+                <Insets left="3.0" />
+            </HBox.margin>
+        </VBox>
+
+        <!-- Section droite de la fenêtre -->
+        <VBox id="VBoxDroite">
+            <!-- Marges pour la boîte -->
+            <HBox.margin>
+                <Insets left="3.0" right="3.0" />
+            </HBox.margin>
+            <!-- Ligne supérieure -->
+            <HBox id="HBoxDroite">
+                <!-- Pane pour le bouton de carte de fidélité -->
+                <Pane styleClass="paneHautDroit">
+                    <Button fx:id="carteFideliteBouton" layoutX="50.0" layoutY="35.0" styleClass="boutonsHautDroite" />
+                </Pane>
+                <!-- Pane pour le bouton de rabais -->
+                <Pane styleClass="paneHautDroit">
+                    <Button fx:id="rabaisBouton" layoutX="50.0" layoutY="35.0" styleClass="boutonsHautDroite" />
+                </Pane>
+            </HBox>
+            <!-- Pane pour le mode de paiement -->
+            <Pane id="paneMilieuDroite">
+                <!-- Label pour le mode de paiement -->
+                <Label id="labelModePaiement" layoutX="14.0" layoutY="9.0" text="Mode de paiement" />
+                <!-- Boutons pour les différents modes de paiement -->
+                <Button fx:id="debitBouton" layoutX="50.0" layoutY="50.0" styleClass="boutonsMilieuDroite" />
+                <Button fx:id="argentBouton" layoutX="50.0" layoutY="175.0" styleClass="boutonsMilieuDroite" />
+                <Button fx:id="creditBouton" layoutX="325.0" layoutY="50.0" styleClass="boutonsMilieuDroite" />
+                <Button fx:id="carteCadeauBouton" layoutX="325.0" layoutY="175.0" styleClass="boutonsMilieuDroite" />
+            </Pane>
+            <!-- Pane pour le total à payer -->
+            <Pane id="paneBasDroite">
+                <!-- Label pour afficher le total -->
+                <Label id="labelTotalDroite" layoutX="14.0" layoutY="14.0" text="TOTAL:" />
+                <!-- Label pour afficher le montant total -->
+                <Label id="labelTotalDroiteMontant" fx:id="totalDroiteLabel" layoutX="107.0" layoutY="14.0" />
+                <!-- Bouton pour payer -->
+                <Button id="boutonPayer" fx:id="payerBouton" layoutX="150.0" layoutY="99.0" />
+            </Pane>
+        </VBox>
+    </HBox>
+</AnchorPane>

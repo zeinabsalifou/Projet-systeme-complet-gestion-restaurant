@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Importations des classes JavaFX -->
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Définition de la structure principale de la vue -->
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@stylePrepaCmd.css" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.interfacedevoire.StatistiquesController">
+
+    <!-- Conteneur principal -->
+    <VBox spacing="10">
+        <!-- En-tête de la page -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <!-- Titre -->
+            <Label styleClass="section-title" text="Suivi de Commandes" />
+            <!-- Espace flexible pour aligner le logo à droite -->
+            <Pane HBox.hgrow="ALWAYS" />
+            <!-- Logo -->
+            <ImageView fitHeight="60.0" fitWidth="167.0" preserveRatio="true">
+                <image>
+                    <Image url="@logo.png" /> <!-- Assurez-vous que le chemin est correct -->
+                </image>
+                <!-- Marge à droite pour l'espace entre le logo et le bord de la fenêtre -->
+                <HBox.margin>
+                    <Insets right="10.0" />
+                </HBox.margin>
+            </ImageView>
+        </HBox>
+
+        <!-- Tableau de suivi des commandes -->
+        <TableView fx:id="orderTrackingTable" prefHeight="180.0" prefWidth="590.0" VBox.vgrow="ALWAYS">
+            <!-- Colonnes du tableau -->
+            <columns>
+                <TableColumn fx:id="commandColumn" text="N°Commande" />
+                <TableColumn fx:id="prepTimeColumn" text="Temps de Préparation (min)" />
+                <TableColumn fx:id="deliveryTimeColumn" text="Temps de Livraison (min)" />
+                <TableColumn fx:id="confirmationColumn" text="Confirmation de Livraison">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="confirmationLivraison" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+            <!-- Politique de redimensionnement des colonnes -->
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+
+        <!-- En-tête pour les plats populaires -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label styleClass="section-title" text="Plats Populaires" />
+            <!-- Espace flexible pour aligner le bouton à droite -->
+            <Pane HBox.hgrow="ALWAYS" /> <!-- Cet élément agit comme un espace flexible -->
+            <!-- Bouton pour retourner au tableau de bord -->
+            <Button onAction="#Bouttonderetour" styleClass="return-button" text="Retour au tableau de bord">
+                <!-- Marge à droite pour l'espace entre le bouton et le bord de la fenêtre -->
+                <HBox.margin>
+                    <Insets right="10.0" />
+                </HBox.margin>
+            </Button>
+        </HBox>
+
+        <!-- Conteneur pour les plats populaires -->
+        <HBox alignment="BASELINE_LEFT" spacing="10">
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                <!-- Tableau des plats populaires -->
+                <TableView fx:id="popularDishesTable" prefHeight="150.0" prefWidth="290.0">
+                    <columns>
+                        <TableColumn fx:id="dishNameColumn" text="Plat" />
+                        <TableColumn fx:id="orderCountColumn" text="Nombre de Commandes" />
+                        <TableColumn fx:id="ratingColumn" text="Note des Clients" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <!-- Diagramme circulaire de popularité des plats -->
+                <PieChart fx:id="pieChart" prefWidth="290.0" title="Popularité des plats" />
+            </VBox>
+        </HBox>
+    </VBox>
+</ScrollPane>

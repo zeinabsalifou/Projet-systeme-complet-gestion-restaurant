@@ -1,0 +1,191 @@
+/* Styles principaux */
+.root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.label {
+    -fx-text-fill: #333;
+}
+
+.button {
+    -fx-background-color: #5EAA19;
+    -fx-text-fill: white;
+}
+
+/* Menu et boutons */
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #0000FF transparent;
+    -fx-border-width: 0 0 3 0;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+}
+
+.menu-button:hover {
+    -fx-border-color: transparent transparent #5EAA19 transparent;
+    -fx-text-fill: #5EAA19;
+}
+
+/* Styles pour les VBox des éléments de menu */
+.menu-item-box {
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+    -fx-border-color: #ddd;
+    -fx-border-width: 2;
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
+}
+.order-title{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+.menu-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+.menu-item-image {
+    fit-width: 100px; /* Ajustez selon la taille souhaitée */
+    fit-height: 100px; /* Ajustez selon la taille souhaitée */
+    preserve-ratio: true;
+}
+
+.menu-item-title, .menu-item-price {
+    -fx-font-size: 16px; /* Ajustez selon la taille souhaitée */
+    -fx-text-alignment: center;
+}
+
+.menu-item-box {
+    -fx-alignment: center;
+}
+
+.menu-price {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666;
+}
+
+/* Styles pour les images */
+.image-view {
+    -fx-fit-width: 100;
+    -fx-fit-height: 100;
+    -fx-preserve-ratio: true;
+}
+
+/* Style pour les Spinners */
+.spinner {
+    -fx-pref-width: 50;
+}
+
+/* Styles pour la section de commande */
+.order-summary {
+    -fx-background-color: #f4f4f4;
+    -fx-padding: 20px;
+}
+
+.order-item-box {
+    -fx-padding: 5px;
+    -fx-spacing: 5px;
+}
+
+/* Grille de mise en page pour les éléments de menu */
+.grid-pane {
+    -fx-hgap: 20;
+    -fx-vgap: 20;
+}
+
+/* Barre de défilement */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Validation et effacement des boutons */
+.validate-button, .clear-button {
+    -fx-font-size: 14px;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20;
+}
+
+.validate-button {
+    -fx-background-color: #5EAA19;
+}
+
+.clear-button {
+    -fx-background-color: #FF6B6B;
+}
+
+.validate-button:hover, .clear-button:hover {
+    -fx-opacity: 0.9;
+}
+/* Barre de recherche */
+.search-field {
+    -fx-background-color: #000000;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.0, 0, 1);
+    -fx-pref-width: 200px; /* Largeur de la barre de recherche */
+    -fx-pref-height: 30px; /* Hauteur de la barre de recherche */
+    -fx-padding: 3px 10px;
+}
+/* Styles spécifiques pour chaque catégorie */
+.menu-entrees {
+    -fx-text-fill: blue;
+    -fx-background-color: transparent ;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-border-color: transparent transparent #FF6B6B transparent; /* Rouge pour 'Entrées' */
+    -fx-border-width: 3px;
+    -fx-border-radius: 2;
+}
+
+.menu-plat-principal {
+    -fx-text-fill: blue;
+    -fx-background-color: transparent ;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-border-color: transparent transparent #FFD700 transparent; /* Or pour 'Plat principal' */
+    -fx-border-width: 3px;
+    -fx-border-radius: 2;
+}
+
+.menu-boissons {
+    -fx-text-fill: blue;
+    -fx-background-color: transparent ;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-border-color: transparent transparent #00BFFF transparent; /* Bleu pour 'Boissons' */
+    -fx-border-width: 3px;
+    -fx-border-radius: 2;
+}
+
+.menu-sandwichs {
+    -fx-text-fill: blue;
+    -fx-background-color: transparent ;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-border-color: transparent transparent #32CD32 transparent; /* Vert pour 'Sandwichs' */
+    -fx-border-width: 3px;
+    -fx-border-radius: 2;
+}
+
+.menu-enfants {
+    -fx-text-fill: blue;
+    -fx-background-color: transparent ;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-border-color: transparent transparent #FFA500 transparent; /* Orange pour 'Menu enfants' */
+    -fx-border-width: 3px;
+    -fx-border-radius: 2;
+}
+.main-menu-container {
+        -fx-hgap: 5px; /* Horizontal gap */
+        -fx-vgap: 5px; /* Vertical gap */
+
+        /* Other styles as needed */
+    }

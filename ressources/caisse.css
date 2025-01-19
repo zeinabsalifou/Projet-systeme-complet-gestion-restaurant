@@ -1,0 +1,257 @@
+/*
+*       Auteur: Amélie Cantin
+*       22 mars 2024
+*
+*       Pour l'équipe no 1:
+*               Amélie Cantin
+*               Rayane Dakech
+*               Soukaina Qaraqouna
+*               Assia Rabahi
+*               Zeinab Salifou
+*
+*       Travail Pratique dans le cadre du cours
+*       Introduction aux interfaces utilisateur
+*                   INF1034
+*/
+
+
+#AnchorPaneFenetre {
+    -fx-pref-height: 800px;
+    -fx-pref-width: 1300px;
+    -fx-font-size: 16px;
+}
+
+#HBoxParent {
+    -fx-pref-height: 800px;
+    -fx-pref-width: 1300px;
+    -fx-padding: 2px 0 2px 2px;
+}
+
+#list-view {
+    -fx-pref-height: 650px;
+    -fx-pref-width: 265px;
+}
+
+.button {
+    -fx-text-alignment: center;
+}
+
+.bordureVerte {
+    -fx-border-color: green;
+    -fx-border-width: 5;
+}
+
+/* GAUCHE */
+
+#VBoxGauche {
+    -fx-padding: 15px;
+    -fx-pref-height: 775px;
+    -fx-pref-width: 300px;
+    -fx-border-color: black;
+    -fx-alignment: CENTER;
+}
+
+#ajouterModifierCommandeBouton {
+    -fx-background-color: lightblue;
+    -fx-border-color: black;
+    -fx-border-radius: 5px;
+    -fx-pref-height: 46px;
+    -fx-pref-width: 255px;
+}
+
+#ajouterModifierCommandeBouton:hover {
+    -fx-font-weight: bold;
+}
+
+.boutonCommande {
+    -fx-pref-width: 240px;
+    -fx-pref-height: 60px;
+}
+
+.vboxBoutonCommande {
+    -fx-alignment: center;
+}
+
+#boutonDeconnecter {
+    -fx-pref-width: 240px;
+    -fx-pref-height: 60px;
+    -fx-background-color: red;
+    -fx-border-color: black;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+#imageView {
+    -fx-image: url(logo.png);
+}
+
+
+/* CENTRE */
+
+#VBoxCentre {
+    -fx-min-height: 800px;
+    -fx-pref-height: 800px;
+    -fx-pref-width: 400px;
+    -fx-content-display: center;
+}
+
+.labelDuCentre {
+    -fx-pref-height: 45px;
+    -fx-pref-width: 400px;
+    -fx-alignment: center;
+}
+
+#labelTransactionEnCours {
+    -fx-border-color: black;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+#labelCommandeEnPaiement {
+    -fx-border-color: grey;
+    -fx-font-size: 14px;
+}
+
+.table-view {
+    -fx-pref-height: 461px;
+    -fx-pref-width: 387px;
+    -fx-padding: 0 3px 0 3px;
+}
+
+#tableItemColonne {
+    -fx-max-width: 250px;
+    -fx-min-width: 250px;
+    -fx-pref-width: 250px;
+}
+
+#tablePrixColonne {
+    -fx-max-width: 127px;
+    -fx-min-width: 125px;
+    -fx-pref-width: 127px;
+    -fx-alignment: center-right;
+}
+
+.HBoxCalculTotal {
+    -fx-pref-height: 40px;
+    -fx-pref-width: 400px;
+}
+
+.labelCalculTotalGauche {
+    -fx-alignment: center-right;
+    -fx-pref-height: 40px;
+    -fx-pref-width: 250px;
+    -fx-padding: 0 15px 0 0;
+}
+
+.labelCalculTotalDroite {
+    -fx-alignment: center-right;
+    -fx-pref-height: 40px;
+    -fx-pref-width: 150px;
+    -fx-padding: 0 10px 0 0;
+}
+
+.labelTotal {
+    -fx-alignment: center-right;
+    -fx-pref-height: 62px;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+#labelTotalGauche {
+    -fx-alignment: center-right;
+    -fx-padding: 0 15px 0 0;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 62px;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+#labelTotalDroite {
+    -fx-alignment: center-right;
+    -fx-padding: 0 10px 0 0;
+    -fx-pref-width:200px;
+    -fx-pref-height: 62px;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+/* DROITE */
+
+#VBoxDoite {
+    -fx-pref-height: 800px;
+    -fx-pref-width: 600px;
+}
+
+#HBoxDroite {
+    -fx-alignment:CENTER_LEFT;
+    -fx-pref-height: 155px;
+    -fx-pref-width: 391px;
+}
+
+.paneHautDroit {
+    -fx-pref-height: 155px;
+    -fx-pref-width: 300px;
+    -fx-border-color: black;
+}
+
+.boutonsHautDroite {
+    -fx-font-size: 24px;
+    -fx-alignment: CENTER;
+    -fx-pref-height: 90;
+    -fx-pref-width: 200;
+    -fx-text-alignment: CENTER;
+}
+
+#paneMilieuDroite {
+    -fx-pref-height: 315px;
+    -fx-pref-width: 600px;
+    -fx-border-color: black;
+}
+
+#labelModePaiement {
+    -fx-pref-height: 25px;
+    -fx-pref-width: 200px;
+    -fx-font-weight: bold;
+}
+
+.boutonsMilieuDroite {
+    -fx-alignment: CENTER;
+    -fx-pref-height: 100px;
+    -fx-pref-width: 225px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: CENTER;
+    -fx-font-size: 30px;
+}
+
+#paneBasDroite {
+    -fx-pref-height: 330px;
+    -fx-pref-width: 600px;
+    -fx-border-color: black;
+}
+
+#labelTotalDroite {
+    -fx-pref-height: 45px;
+    -fx-pref-width: 100px;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+}
+
+#labelTotalDroiteMontant {
+    -fx-alignment: center-right;
+    -fx-pref-height: 45px;
+    -fx-pref-width: 150px;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+}
+
+#boutonPayer {
+    -fx-alignment: CENTER;
+    -fx-pref-height: 170px;
+    -fx-pref-width: 300px;
+    -fx-font-weight: bold;
+    -fx-background-color: green;
+    -fx-border-color: black;
+    -fx-border-radius: 5;
+    -fx-text-alignment: CENTER;
+    -fx-font-size: 48px;
+}

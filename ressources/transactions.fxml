@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Importations des classes JavaFX -->
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<!-- Définition de la structure de la vue -->
+<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="tp1.interfacedevoire.TransactionsController">
+    <!-- En-tête de la page -->
+    <Label style="-fx-padding: -50 0 5 20;" text="Transactions d'achats">
+        <font>
+            <Font size="24" />
+        </font>
+    </Label>
+
+    <!-- Espaces pour le placement -->
+    <Region prefHeight="10" />
+    <Region prefHeight="10" />
+
+    <!-- Conteneur principal avec un BorderPane pour organiser les éléments -->
+    <BorderPane >
+        <center>
+            <!-- Conteneur pour aligner les éléments au centre -->
+            <VBox alignment="CENTER">
+                <!-- Espacement pour le placement -->
+                <padding>
+                    <Insets top="5" left="270" bottom="240" right="100" />
+                </padding>
+                <!-- Conteneur pour la TableView à l'intérieur d'un AnchorPane pour le positionnement -->
+                <AnchorPane minHeight="350" minWidth="600" prefHeight="350" prefWidth="600">
+                    <!-- Conteneur principal pour les éléments à l'intérieur de la TableView -->
+                    <children>
+                        <VBox>
+                            <!-- TableView pour afficher les transactions -->
+                            <TableView fx:id="transactionTable" prefHeight="500" prefWidth="1000">
+                                <!-- Colonnes de la TableView -->
+                                <columns>
+                                    <TableColumn fx:id="dateColumn" prefWidth="250.0" text="Date" />
+                                    <TableColumn fx:id="supplierColumn" prefWidth="250.0" text="Fournisseur" />
+                                    <TableColumn fx:id="productColumn" prefWidth="250.0" text="Produit" />
+                                    <TableColumn fx:id="amountColumn" prefWidth="250.0" text="Montant ($)" />
+                                </columns>
+                            </TableView>
+                            <!-- Espacement après la TableView -->
+                            <Region prefHeight="15" />
+                            <!-- Bouton pour revenir à l'interface précédente -->
+                            <Button fx:id="btnP" text="Précédent" onAction="#retourInterfaceT" />
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </VBox>
+        </center>
+    </BorderPane>
+</VBox>
