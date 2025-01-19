@@ -1,0 +1,7 @@
+1,Ofrais,Produits frais,John Doe,123 Rue des Jardins,123-456-7890,johndo@gmail.com
+2,Métro,Produits laitiers,Jane Smith,456 Avenue des Jeunes,456-789-0123,janesmith@hotmail.com
+3,Makita,Produits secs,Mike Johnson,789 Boulevard Frenette,789-012-3456,mikejohn@live.ca
+4,Biomarin,Produits de mer,Sarah Lee,321 Rue des fleurs,098-765-4321,saralee@outlook.com
+5,Castel,Biere,Emily Brown,654 Avenue st sauveur,453-765-823,emilybrown@gmail.com
+6,Naturfresh,Fruits,Julie Cormier,365 Rue des roses,377-877-231,juliecormier@yahoo.com
+7,Vitnet, Produits d'entretien,Natasha Colombe,785 Avenue Royale, 287-876-862,natashacolombe@gmail.com
